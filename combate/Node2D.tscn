@@ -1,24 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://prota1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prota2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://enemigo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://golem2_anim.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://enemigo.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="prota1" parent="." instance=ExtResource( 1 )]
-frame = 1
+editor/display_folded = true
+position = Vector2( 190.549, 455.29 )
+frame = 5
 
 [node name="prota2" parent="." instance=ExtResource( 2 )]
-editor/display_folded = false
-frame = 9
+editor/display_folded = true
+position = Vector2( 196.38, 131.515 )
+frames = ExtResource( 3 )
+frame = 7
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
 
-[node name="enemigo" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
-frame = 9
+[node name="valores_aliados" parent="prota2" index="1"]
+margin_top = 300.0
+margin_bottom = 362.0
+
+[node name="enemigo" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848.162, 280.619 )
+frame = 7
 
 [connection signal="turno_enemigo" from="prota1" to="enemigo" method="turno_enemigo" binds= [ 1 ]]
 [connection signal="turno_enemigo" from="prota2" to="enemigo" method="turno_enemigo" binds= [ 2 ]]
