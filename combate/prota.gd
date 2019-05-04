@@ -15,12 +15,17 @@ func _ready():
 	pass
 
 
-func _on_MenuButton_atk_esp():
+func _on_MenuButton_atk_esp(): 
+	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
+	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
+	medir_vida(vida_enemigo.value) #actualiza el número
+	pass # Replace with function body.
+
+func _on_MenuButton_atk_pata():
 	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )
 	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
 	medir_vida(vida_enemigo.value)
 	pass # Replace with function body.
-
 
 func _on_MenuButton2_atk_magia_1():
 	if magia.value>=5:
@@ -28,7 +33,7 @@ func _on_MenuButton2_atk_magia_1():
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
 		magia.set_value(magia.value-5)
 		magia_actual_num.set_text(String(magia.get_value()))
-		medir_vida(vida_enemigo.value)
+		medir_vida(vida_enemigo.value)#
 	pass # Replace with function body.
 
 func medir_vida(delta):
