@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="combate"
 run/main_scene="res://Node2D.tscn"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [rendering]
