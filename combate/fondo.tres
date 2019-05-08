@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=2]
+
+[ext_resource path="res://otros/background/animated/frame_0_delay-0.1s.jpg" type="Texture" id=1]
+[ext_resource path="res://otros/background/animated/frame_1_delay-0.1s.jpg" type="Texture" id=2]
+[ext_resource path="res://otros/background/animated/frame_2_delay-0.1s.jpg" type="Texture" id=3]
+[ext_resource path="res://otros/background/animated/frame_3_delay-0.1s.jpg" type="Texture" id=4]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
