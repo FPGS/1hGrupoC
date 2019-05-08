@@ -12,14 +12,17 @@
 script = ExtResource( 1 )
 
 [node name="fondo" type="AnimatedSprite" parent="."]
-position = Vector2( 527.191, 305.047 )
+position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
+frame = 1
+playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 194.093, 439.385 )
-frame = 8
+frame = 10
 
 [node name="valores_aliados" parent="prota1" index="1"]
 editor/display_folded = false
@@ -28,7 +31,7 @@ editor/display_folded = false
 editor/display_folded = true
 position = Vector2( 196.38, 131.515 )
 frames = ExtResource( 6 )
-frame = 10
+frame = 14
 
 [node name="menu_accion" parent="prota2" index="0"]
 editor/display_folded = false
@@ -40,7 +43,7 @@ margin_bottom = 362.0
 
 [node name="enemigo" parent="." instance=ExtResource( 7 )]
 position = Vector2( 848.162, 280.619 )
-frame = 10
+frame = 17
 
 [connection signal="turno_enemigo" from="prota1" to="enemigo" method="turno_enemigo" binds= [ 1 ]]
 [connection signal="atk_pata" from="prota1/menu_accion/ataque" to="prota1" method="_on_MenuButton_atk_pata"]

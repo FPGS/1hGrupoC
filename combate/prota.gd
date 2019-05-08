@@ -38,7 +38,7 @@ func _on_MenuButton2_atk_magia_1():
 
 func medir_vida(delta):
 	if delta<=0:
-		get_node("../enemigo").play("death")
+		get_node("../enemigo").play("Muerte")
 	else:
 		emit_signal("turno_enemigo")
 	pass

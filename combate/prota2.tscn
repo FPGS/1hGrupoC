@@ -45,54 +45,54 @@
 [ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Dying/0_Golem_Dying_012.png" type="Texture" id=43]
 [ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Dying/0_Golem_Dying_013.png" type="Texture" id=44]
 [ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Dying/0_Golem_Dying_014.png" type="Texture" id=45]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_000.png" type="Texture" id=46]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_001.png" type="Texture" id=47]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_002.png" type="Texture" id=48]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_003.png" type="Texture" id=49]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_004.png" type="Texture" id=50]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_005.png" type="Texture" id=51]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_006.png" type="Texture" id=52]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_007.png" type="Texture" id=53]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_008.png" type="Texture" id=54]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_009.png" type="Texture" id=55]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_010.png" type="Texture" id=56]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_011.png" type="Texture" id=57]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_000.png" type="Texture" id=58]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_001.png" type="Texture" id=59]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_002.png" type="Texture" id=60]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_003.png" type="Texture" id=61]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_004.png" type="Texture" id=62]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_005.png" type="Texture" id=63]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_006.png" type="Texture" id=64]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_007.png" type="Texture" id=65]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_008.png" type="Texture" id=66]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_009.png" type="Texture" id=67]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_010.png" type="Texture" id=68]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_011.png" type="Texture" id=69]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_000.png" type="Texture" id=70]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_001.png" type="Texture" id=71]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_002.png" type="Texture" id=72]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_003.png" type="Texture" id=73]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_004.png" type="Texture" id=74]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_005.png" type="Texture" id=75]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_006.png" type="Texture" id=76]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_007.png" type="Texture" id=77]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_008.png" type="Texture" id=78]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_009.png" type="Texture" id=79]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_010.png" type="Texture" id=80]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_011.png" type="Texture" id=81]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_000.png" type="Texture" id=82]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_001.png" type="Texture" id=83]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_002.png" type="Texture" id=84]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_003.png" type="Texture" id=85]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_004.png" type="Texture" id=86]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_005.png" type="Texture" id=87]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_006.png" type="Texture" id=88]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_007.png" type="Texture" id=89]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_008.png" type="Texture" id=90]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_009.png" type="Texture" id=91]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_010.png" type="Texture" id=92]
-[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_011.png" type="Texture" id=93]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_000.png" type="Texture" id=46]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_001.png" type="Texture" id=47]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_002.png" type="Texture" id=48]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_003.png" type="Texture" id=49]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_004.png" type="Texture" id=50]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_005.png" type="Texture" id=51]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_006.png" type="Texture" id=52]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_007.png" type="Texture" id=53]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_008.png" type="Texture" id=54]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_009.png" type="Texture" id=55]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_010.png" type="Texture" id=56]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Throwing/0_Golem_Throwing_011.png" type="Texture" id=57]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_000.png" type="Texture" id=58]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_001.png" type="Texture" id=59]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_002.png" type="Texture" id=60]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_003.png" type="Texture" id=61]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_004.png" type="Texture" id=62]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_005.png" type="Texture" id=63]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_006.png" type="Texture" id=64]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_007.png" type="Texture" id=65]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_008.png" type="Texture" id=66]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_009.png" type="Texture" id=67]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_010.png" type="Texture" id=68]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Kicking/0_Golem_Kicking_011.png" type="Texture" id=69]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_000.png" type="Texture" id=70]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_001.png" type="Texture" id=71]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_002.png" type="Texture" id=72]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_003.png" type="Texture" id=73]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_004.png" type="Texture" id=74]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_005.png" type="Texture" id=75]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_006.png" type="Texture" id=76]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_007.png" type="Texture" id=77]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_008.png" type="Texture" id=78]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_009.png" type="Texture" id=79]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_010.png" type="Texture" id=80]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Slashing/0_Golem_Slashing_011.png" type="Texture" id=81]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_000.png" type="Texture" id=82]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_001.png" type="Texture" id=83]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_002.png" type="Texture" id=84]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_003.png" type="Texture" id=85]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_004.png" type="Texture" id=86]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_005.png" type="Texture" id=87]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_006.png" type="Texture" id=88]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_007.png" type="Texture" id=89]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_008.png" type="Texture" id=90]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_009.png" type="Texture" id=91]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_010.png" type="Texture" id=92]
+[ext_resource path="res://personaje/Golem_1/PNG/PNG Sequences/Hurt/0_Golem_Hurt_011.png" type="Texture" id=93]
 [ext_resource path="res://prota2.gd" type="Script" id=94]
 [ext_resource path="res://Atake_per1.gd" type="Script" id=95]
 [ext_resource path="res://Magia_per1.gd" type="Script" id=96]
@@ -105,7 +105,7 @@
 [ext_resource path="res://assets/GUI/energy_bar_bg.png" type="Texture" id=103]
 [ext_resource path="res://assets/GUI/energy_bar_fill.png" type="Texture" id=104]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
@@ -124,22 +124,22 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
-"name": "Patada",
+"name": "Tirar",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
 "loop": true,
-"name": "Tirar",
+"name": "Patada",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ) ],
-"loop": false,
-"name": "Hurt",
+"loop": true,
+"name": "Palo",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ) ],
-"loop": true,
-"name": "Palo",
+"loop": false,
+"name": "Hurt",
 "speed": 10.0
 } ]
 
@@ -156,9 +156,9 @@ font_data = ExtResource( 99 )
 [node name="prota2" type="AnimatedSprite"]
 position = Vector2( 198.138, 222.936 )
 scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "Idle"
-frame = 13
+frame = 2
 playing = true
 script = ExtResource( 94 )
 

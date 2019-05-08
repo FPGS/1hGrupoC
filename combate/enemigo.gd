@@ -5,8 +5,7 @@ onready var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/const
 onready var magia=get_node("valores_enemigos/constantes/magia/barra2/PM")
 onready var magia_actual_num=get_node("valores_enemigos/constantes/magia/barra2/contenedor/fondo/valor")
 func _ready():
-	var vida=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/PS")
-	var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
+	
 	pass
 
 
@@ -14,7 +13,7 @@ func _ready():
 
 func medir_vida(delta):
 	if delta<=0:
-		get_node("../prota"+str(per)).play("death")
+		get_node("../prota"+str(per)).play("Muerte")
 	else:
 		per=(per%2)+1
 		get_node("../prota"+str(per)+"/menu_accion").visible=true
