@@ -19,12 +19,14 @@ func _on_MenuButton_atk_esp():
 	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )
 	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
 	medir_vida(vida_enemigo.value)
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("espada").play()
 	pass # Replace with function body.
 
 func _on_MenuButton_atk_pata():
 	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )
 	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
 	medir_vida(vida_enemigo.value)
+	get_tree().get_nodes_in_group("sonidos")[0].get_node("patada").play()
 	pass # Replace with function body.
 
 func _on_MenuButton2_atk_magia_1():
@@ -34,6 +36,7 @@ func _on_MenuButton2_atk_magia_1():
 		magia.set_value(magia.value-5)
 		magia_actual_num.set_text(String(magia.get_value()))
 		medir_vida(vida_enemigo.value)
+		get_tree().get_nodes_in_group("sonidos")[0].get_node("magia").play()
 	pass # Replace with function body.
 
 func medir_vida(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://fondo.tres" type="SpriteFrames" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://prota2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://golem2_anim.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://enemigo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=8]
+[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=9]
+[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=10]
+[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=11]
+[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=12]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,14 +20,14 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 194.093, 439.385 )
-frame = 10
+frame = 15
 
 [node name="valores_aliados" parent="prota1" index="1"]
 editor/display_folded = false
@@ -31,7 +36,7 @@ editor/display_folded = false
 editor/display_folded = true
 position = Vector2( 196.38, 131.515 )
 frames = ExtResource( 6 )
-frame = 14
+frame = 9
 
 [node name="menu_accion" parent="prota2" index="0"]
 editor/display_folded = false
@@ -43,7 +48,27 @@ margin_bottom = 362.0
 
 [node name="enemigo" parent="." instance=ExtResource( 7 )]
 position = Vector2( 848.162, 280.619 )
-frame = 17
+frame = 12
+
+[node name="sonidos" type="Node" parent="." groups=[
+"sonidos",
+]]
+
+[node name="espada" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 8 )
+
+[node name="magia" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 9 )
+
+[node name="patada" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 10 )
+
+[node name="fondo2" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="zombie" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 12 )
 
 [connection signal="turno_enemigo" from="prota1" to="enemigo" method="turno_enemigo" binds= [ 1 ]]
 [connection signal="atk_pata" from="prota1/menu_accion/ataque" to="prota1" method="_on_MenuButton_atk_pata"]

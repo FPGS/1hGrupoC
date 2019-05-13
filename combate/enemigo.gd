@@ -7,13 +7,14 @@ onready var magia_actual_num=get_node("valores_enemigos/constantes/magia/barra2/
 func _ready():
 	
 	pass
-
-
+#poner esta linea cuando muera el enemigo
+#get_tree().get_nodes_in_group("sonidos")[0].get_node("zombie").play()
 
 
 func medir_vida(delta):
 	if delta<=0:
 		get_node("../prota"+str(per)).play("Muerte")
+		
 	else:
 		per=(per%2)+1
 		get_node("../prota"+str(per)+"/menu_accion").visible=true
