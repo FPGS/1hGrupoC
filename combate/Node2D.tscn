@@ -23,13 +23,16 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 192.38, 439.385 )
-frame = 15
+position = Vector2( 194.093, 439.385 )
+frame = 6
+
+[node name="valores_aliados" parent="prota1" index="1"]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="prota1"]
 anims/espada = ExtResource( 5 )
@@ -40,7 +43,7 @@ script = ExtResource( 7 )
 editor/display_folded = true
 position = Vector2( 196.38, 131.515 )
 frames = ExtResource( 9 )
-frame = 6
+frame = 8
 
 [node name="menu_accion" parent="prota2" index="0"]
 editor/display_folded = false
@@ -52,13 +55,16 @@ margin_bottom = 362.0
 
 [node name="enemigo" parent="." instance=ExtResource( 10 )]
 position = Vector2( 848.162, 280.619 )
-frame = 9
+frame = 11
 
 [node name="sonidos" type="Node" parent="." groups=[
 "sonidos",
 ]]
 
 [node name="espada" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 11 )
+
+[node name="espada2" type="AudioStreamPlayer" parent="sonidos"]
 stream = ExtResource( 11 )
 
 [node name="magia" type="AudioStreamPlayer" parent="sonidos"]

@@ -14,7 +14,6 @@ func _ready():
 func medir_vida(delta):
 	if delta<=0:
 		get_node("../prota"+str(per)).play("Muerte")
-		
 	else:
 		per=(per%2)+1
 		get_node("../prota"+str(per)+"/menu_accion").visible=true
@@ -22,7 +21,7 @@ func medir_vida(delta):
 
 func turno_enemigo(personaje):
 	per=personaje
-	_ready()
+	
 	var tipo_ataque=int(rand_range(1,3))
 	if magia.value<5:
 		tipo_ataque=1

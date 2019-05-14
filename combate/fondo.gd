@@ -6,7 +6,7 @@ func _ready():
 
 func _process(delta):
 	cambiarFotogramaTrasXTiempo(0.15, delta)
-	print(contadorDelta)
+	
 
 func cambiarFotograma():
 	frame += 1

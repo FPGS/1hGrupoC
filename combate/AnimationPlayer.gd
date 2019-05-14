@@ -20,7 +20,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name=="espada":
 		vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
-		get_tree().get_nodes_in_group("sonidos")[0].get_node("espada").play()
 		emit_signal("medir_vida",vida_enemigo.value) 
 	if anim_name=="volver":
 		emit_signal("turno_enemigo")
