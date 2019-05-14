@@ -1,6 +1,6 @@
 extends AnimatedSprite
-signal turno_enemigo
-
+signal volver
+signal mover
 onready var vida=get_node("valores_aliados/constantes/vida/barra1/PS")
 onready var vida_enemigo=get_node("../enemigo/valores_enemigos/constantes/vida/barra1/PS")
 onready var vida_actual_num=get_node("valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
@@ -8,6 +8,7 @@ onready var vida_actual_enemigo_num=get_node("../enemigo/valores_enemigos/consta
 onready var magia=get_node("valores_aliados/constantes/magia/barra2/PM")
 onready var magia_actual_num=get_node("valores_aliados/constantes/magia/barra2/contenedor/fondo/valor")
 func _ready():
+	
 	vida_actual_num.set_text(String(vida.get_value()))
 	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
 	magia_actual_num.set_text(String(magia.get_value()))
@@ -16,10 +17,7 @@ func _ready():
 
 
 func _on_MenuButton_atk_esp(): 
-	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
-	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
-	medir_vida(vida_enemigo.value) #actualiza el número
-	get_tree().get_nodes_in_group("sonidos")[0].get_node("espada").play()
+	emit_signal("mover")
 	pass # Replace with function body.
 
 func _on_MenuButton_atk_pata():
@@ -41,9 +39,10 @@ func _on_MenuButton2_atk_magia_1():
 
 func medir_vida(delta):
 	if delta<=0:
+		get_tree().get_nodes_in_group("sonidos")[0].get_node("zombie").play()
 		get_node("../enemigo").play("Muerte")
 	else:
-		emit_signal("turno_enemigo")
+		emit_signal("volver")
 	pass
 
 

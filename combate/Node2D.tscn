@@ -1,17 +1,20 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://fondo.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://fondo.gd" type="Script" id=3]
 [ext_resource path="res://prota1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://prota2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://golem2_anim.tres" type="SpriteFrames" id=6]
-[ext_resource path="res://enemigo.tscn" type="PackedScene" id=7]
-[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=8]
-[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=9]
-[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=10]
-[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=11]
-[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=12]
+[ext_resource path="res://espada.tres" type="Animation" id=5]
+[ext_resource path="res://volver.tres" type="Animation" id=6]
+[ext_resource path="res://AnimationPlayer.gd" type="Script" id=7]
+[ext_resource path="res://prota2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://golem2_anim.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://enemigo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=11]
+[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=12]
+[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=13]
+[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=14]
+[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=15]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,23 +23,24 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 194.093, 439.385 )
+position = Vector2( 192.38, 439.385 )
 frame = 15
 
-[node name="valores_aliados" parent="prota1" index="1"]
-editor/display_folded = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="prota1"]
+anims/espada = ExtResource( 5 )
+anims/volver = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="prota2" parent="." instance=ExtResource( 5 )]
+[node name="prota2" parent="." instance=ExtResource( 8 )]
 editor/display_folded = true
 position = Vector2( 196.38, 131.515 )
-frames = ExtResource( 6 )
-frame = 9
+frames = ExtResource( 9 )
+frame = 6
 
 [node name="menu_accion" parent="prota2" index="0"]
 editor/display_folded = false
@@ -46,32 +50,36 @@ visible = false
 margin_top = 300.0
 margin_bottom = 362.0
 
-[node name="enemigo" parent="." instance=ExtResource( 7 )]
+[node name="enemigo" parent="." instance=ExtResource( 10 )]
 position = Vector2( 848.162, 280.619 )
-frame = 12
+frame = 9
 
 [node name="sonidos" type="Node" parent="." groups=[
 "sonidos",
 ]]
 
 [node name="espada" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 8 )
+stream = ExtResource( 11 )
 
 [node name="magia" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 9 )
+stream = ExtResource( 12 )
 
 [node name="patada" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 10 )
+stream = ExtResource( 13 )
 
 [node name="fondo2" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 11 )
+stream = ExtResource( 14 )
 autoplay = true
 
 [node name="zombie" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 12 )
+stream = ExtResource( 15 )
 
-[connection signal="turno_enemigo" from="prota1" to="enemigo" method="turno_enemigo" binds= [ 1 ]]
+[connection signal="mover" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_mover"]
+[connection signal="volver" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_volver"]
 [connection signal="atk_pata" from="prota1/menu_accion/ataque" to="prota1" method="_on_MenuButton_atk_pata"]
+[connection signal="animation_finished" from="prota1/AnimationPlayer" to="prota1/AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="medir_vida" from="prota1/AnimationPlayer" to="prota1" method="medir_vida"]
+[connection signal="turno_enemigo" from="prota1/AnimationPlayer" to="enemigo" method="turno_enemigo" binds= [ 1 ]]
 [connection signal="turno_enemigo" from="prota2" to="enemigo" method="turno_enemigo" binds= [ 2 ]]
 [connection signal="atk_pata" from="prota2/menu_accion/ataque" to="prota2" method="_on_MenuButton_atk_pata"]
 
