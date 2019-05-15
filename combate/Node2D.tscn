@@ -17,7 +17,7 @@
 [ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=15]
 [ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=16]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "volver"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -80,8 +80,15 @@ playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 192.38, 439.385 )
-frame = 15
+frame = 7
+
+[node name="ataque" parent="prota1/menu_accion" index="0"]
+editor/display_folded = true
+
+[node name="magia" parent="prota1/menu_accion" index="1"]
+editor/display_folded = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="prota1"]
 anims/espada = ExtResource( 5 )
@@ -91,7 +98,7 @@ script = ExtResource( 7 )
 [node name="prota2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.38, 150 )
 frames = ExtResource( 9 )
-frame = 4
+frame = 12
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
@@ -102,16 +109,17 @@ margin_bottom = 362.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="prota2"]
 anims/espada2 = ExtResource( 10 )
-anims/volver = SubResource( 2 )
+anims/volver = SubResource( 1 )
 script = ExtResource( 7 )
 
 [node name="enemigo" parent="." instance=ExtResource( 11 )]
 position = Vector2( 848.162, 280.619 )
-frame = 15
+frame = 5
 
 [node name="sonidos" type="Node" parent="." groups=[
 "sonidos",
 ]]
+editor/display_folded = true
 
 [node name="espada" type="AudioStreamPlayer" parent="sonidos"]
 stream = ExtResource( 12 )

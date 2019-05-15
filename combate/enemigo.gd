@@ -21,6 +21,8 @@ func medir_vida(delta):
 
 func turno_enemigo(personaje):
 	per=personaje
+	var vida=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/PS")
+	var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
 	
 	var tipo_ataque=int(rand_range(1,3))
 	if magia.value<5:
@@ -36,9 +38,3 @@ func turno_enemigo(personaje):
 		magia_actual_num.set_text(String(magia.get_value()))
 		medir_vida(vida.value)
 	pass # Replace with function body.
-
-
-
-
-
-
