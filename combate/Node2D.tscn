@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://fondo.tres" type="SpriteFrames" id=2]
@@ -12,11 +12,12 @@
 [ext_resource path="res://espada2.tres" type="Animation" id=10]
 [ext_resource path="res://AnimationPlayer2.gd" type="Script" id=11]
 [ext_resource path="res://enemigo.tscn" type="PackedScene" id=12]
-[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=13]
-[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=14]
-[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=15]
-[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=16]
-[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=17]
+[ext_resource path="res://AnimationPlayer3.gd" type="Script" id=13]
+[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=14]
+[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=15]
+[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=16]
+[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=17]
+[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "patada"
@@ -184,9 +185,10 @@ playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 192.38, 439.385 )
 animation = "Run"
-frame = 1
+frame = 9
 
 [node name="ataque" parent="prota1/menu_accion" index="0"]
 editor/display_folded = true
@@ -206,7 +208,7 @@ script = ExtResource( 7 )
 [node name="prota2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.38, 150 )
 frames = ExtResource( 9 )
-frame = 14
+frame = 15
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
@@ -222,31 +224,38 @@ anims/volver2 = SubResource( 2 )
 script = ExtResource( 11 )
 
 [node name="enemigo" parent="." instance=ExtResource( 12 )]
+editor/display_folded = false
 position = Vector2( 848.162, 280.619 )
-frame = 6
+frame = 8
+
+[node name="valores_enemigos" parent="enemigo" index="0"]
+editor/display_folded = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo"]
+script = ExtResource( 13 )
 
 [node name="sonidos" type="Node" parent="." groups=[
 "sonidos",
 ]]
 
 [node name="espada" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 13 )
-
-[node name="espada2" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 13 )
-
-[node name="magia" type="AudioStreamPlayer" parent="sonidos"]
 stream = ExtResource( 14 )
 
-[node name="patada" type="AudioStreamPlayer" parent="sonidos"]
+[node name="espada2" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 14 )
+
+[node name="magia" type="AudioStreamPlayer" parent="sonidos"]
 stream = ExtResource( 15 )
 
-[node name="fondo2" type="AudioStreamPlayer" parent="sonidos"]
+[node name="patada" type="AudioStreamPlayer" parent="sonidos"]
 stream = ExtResource( 16 )
+
+[node name="fondo2" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 17 )
 autoplay = true
 
 [node name="zombie" type="AudioStreamPlayer" parent="sonidos"]
-stream = ExtResource( 17 )
+stream = ExtResource( 18 )
 
 [connection signal="mover" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_mover"]
 [connection signal="volver" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_volver"]

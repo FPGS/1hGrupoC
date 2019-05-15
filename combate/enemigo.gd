@@ -27,11 +27,12 @@ func turno_enemigo(personaje):
 	var tipo_ataque=int(rand_range(1,3))
 	if magia.value<5:
 		tipo_ataque=1
-	if tipo_ataque==1:
-		vida.set_value(vida.value-rand_range(8,12) )
-		vida_actual_num.set_text(String(vida.get_value()))
-		medir_vida(vida.value)
-	if tipo_ataque==2:
+	if tipo_ataque==3:#patada
+		emit_signal("mover",3,per)
+		
+	if tipo_ataque==1:#espada
+		emit_signal("mover",1, per)
+	if tipo_ataque==2:#magia
 		vida.set_value(vida.value-10 )
 		vida_actual_num.set_text(String(vida.get_value()))
 		magia.set_value(magia.value-5)

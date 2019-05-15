@@ -21,9 +21,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
 		emit_signal("medir_vida",vida_enemigo.value) 
 	if anim_name == "patada":
-		vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
-		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
-		emit_signal("medir_vida",vida_enemigo.value) 
+		play("espada")
 	if anim_name=="volver":
 		emit_signal("turno_enemigo")
 	pass # Replace with function body.
