@@ -22,10 +22,7 @@ func _on_MenuButton_atk_esp():
 	pass # Replace with function body.
 
 func _on_MenuButton_atk_pata():
-	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )
-	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
-	medir_vida(vida_enemigo.value)
-	get_tree().get_nodes_in_group("sonidos")[0].get_node("patada").play()
+	emit_signal("mover", 2)
 	pass # Replace with function body.
 
 func _on_MenuButton2_atk_magia_1():
@@ -40,6 +37,7 @@ func _on_MenuButton2_atk_magia_1():
 
 func medir_vida(delta):
 	if delta<=0:
+		get_tree().get_nodes_in_group("sonidos")[0].get_node("zombie").play()
 		get_node("../enemigo").play("Muerte")
 	else:
 		

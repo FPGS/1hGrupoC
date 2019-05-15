@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://fondo.tres" type="SpriteFrames" id=2]
@@ -56,6 +56,58 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 192.38, 439.385 ), Vector2( 750, 281 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../sonidos/patada:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "patada2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 192.38, 150 ), Vector2( 750, 281 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Run", "Patada" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("valores_aliados:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../sonidos/patada:playing")
@@ -128,14 +180,13 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
-frame = 3
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192.38, 439.385 )
 animation = "Run"
-frame = 4
+frame = 1
 
 [node name="ataque" parent="prota1/menu_accion" index="0"]
 editor/display_folded = true
@@ -155,7 +206,7 @@ script = ExtResource( 7 )
 [node name="prota2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.38, 150 )
 frames = ExtResource( 9 )
-frame = 9
+frame = 14
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
@@ -166,12 +217,13 @@ margin_bottom = 362.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="prota2"]
 anims/espada2 = ExtResource( 10 )
+anims/patada2 = SubResource( 3 )
 anims/volver2 = SubResource( 2 )
 script = ExtResource( 11 )
 
 [node name="enemigo" parent="." instance=ExtResource( 12 )]
 position = Vector2( 848.162, 280.619 )
-frame = 2
+frame = 6
 
 [node name="sonidos" type="Node" parent="." groups=[
 "sonidos",
