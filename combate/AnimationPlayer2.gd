@@ -7,27 +7,27 @@ onready var vida_actual_enemigo_num=get_node("../../enemigo/valores_enemigos/con
 func _ready():
 	pass # Replace with function body.
 
-func _on_prota1_mover(delta):
+func _on_prota2_mover(delta):
 	if(delta == 1):
-		play("espada")
+		play("espada2")
 	if(delta == 2):
-		play("patada")
+		play("patada2")
 	pass # Replace with function body.
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name=="espada":
+	if anim_name=="espada2":
 		vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
 		emit_signal("medir_vida",vida_enemigo.value) 
-	if anim_name == "patada":
+	if anim_name == "patada2":
 		vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
 		emit_signal("medir_vida",vida_enemigo.value) 
-	if anim_name=="volver":
+	if anim_name=="volver2":
 		emit_signal("turno_enemigo")
 	pass # Replace with function body.
 
-func _on_prota1_volver():
-	play("volver")
+func _on_prota2_volver():
+	play("volver2")
 	pass # Replace with function body.

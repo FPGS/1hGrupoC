@@ -1,5 +1,7 @@
 extends AnimatedSprite
-signal turno_enemigo
+signal turno_enemigo 
+signal mover
+signal volver
 
 onready var vida=get_node("valores_aliados/constantes/vida/barra1/PS")
 onready var vida_enemigo=get_node("../enemigo/valores_enemigos/constantes/vida/barra1/PS")
@@ -16,10 +18,7 @@ func _ready():
 
 
 func _on_MenuButton_atk_esp():
-	vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )
-	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
-	medir_vida(vida_enemigo.value)
-	get_tree().get_nodes_in_group("sonidos")[0].get_node("espada").play()
+	emit_signal("mover",1)
 	pass # Replace with function body.
 
 func _on_MenuButton_atk_pata():
@@ -44,7 +43,8 @@ func medir_vida(delta):
 		get_node("../enemigo").play("Muerte")
 	else:
 		
-		emit_signal("turno_enemigo")
+		emit_signal("volver")
+		
 	pass
 
 
