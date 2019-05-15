@@ -1,5 +1,6 @@
 extends AnimatedSprite
 var per=1
+signal mover
 onready var vida=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/PS")
 onready var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
 onready var magia=get_node("valores_enemigos/constantes/magia/barra2/PM")

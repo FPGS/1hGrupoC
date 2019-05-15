@@ -180,23 +180,18 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
-frame = 1
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192.38, 439.385 )
-animation = "Run"
-frame = 7
+frame = 15
 
 [node name="ataque" parent="prota1/menu_accion" index="0"]
 editor/display_folded = true
 
 [node name="magia" parent="prota1/menu_accion" index="1"]
 editor/display_folded = true
-
-[node name="valores_aliados" parent="prota1" index="1"]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="prota1"]
 anims/espada = ExtResource( 5 )
@@ -207,6 +202,7 @@ script = ExtResource( 7 )
 [node name="prota2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.38, 150 )
 frames = ExtResource( 9 )
+frame = 1
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
@@ -224,7 +220,7 @@ script = ExtResource( 11 )
 [node name="enemigo" parent="." instance=ExtResource( 12 )]
 editor/display_folded = false
 position = Vector2( 848.162, 280.619 )
-frame = 12
+frame = 11
 
 [node name="valores_enemigos" parent="enemigo" index="0"]
 editor/display_folded = true
@@ -268,6 +264,7 @@ stream = ExtResource( 18 )
 [connection signal="animation_finished" from="prota2/AnimationPlayer2" to="prota2/AnimationPlayer2" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="medir_vida" from="prota2/AnimationPlayer2" to="prota2" method="medir_vida"]
 [connection signal="turno_enemigo" from="prota2/AnimationPlayer2" to="enemigo" method="turno_enemigo" binds= [ 2 ]]
+[connection signal="mover" from="enemigo" to="enemigo/AnimationPlayer" method="_on_enemigo_mover"]
 
 [editable path="prota1"]
 
