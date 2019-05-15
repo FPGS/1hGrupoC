@@ -71,7 +71,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "patada2"
 length = 2.0
 tracks/0/type = "value"
@@ -123,8 +123,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "volver2"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -181,14 +180,14 @@ script = ExtResource( 1 )
 position = Vector2( 530.191, 305.047 )
 scale = Vector2( 1.64238, 1.62681 )
 frames = ExtResource( 2 )
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
 [node name="prota1" parent="." instance=ExtResource( 4 )]
-editor/display_folded = true
 position = Vector2( 192.38, 439.385 )
 animation = "Run"
-frame = 9
+frame = 7
 
 [node name="ataque" parent="prota1/menu_accion" index="0"]
 editor/display_folded = true
@@ -208,7 +207,6 @@ script = ExtResource( 7 )
 [node name="prota2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.38, 150 )
 frames = ExtResource( 9 )
-frame = 15
 
 [node name="menu_accion" parent="prota2" index="0"]
 visible = false
@@ -219,14 +217,14 @@ margin_bottom = 362.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="prota2"]
 anims/espada2 = ExtResource( 10 )
-anims/patada2 = SubResource( 3 )
-anims/volver2 = SubResource( 2 )
+anims/patada2 = SubResource( 2 )
+anims/volver2 = SubResource( 3 )
 script = ExtResource( 11 )
 
 [node name="enemigo" parent="." instance=ExtResource( 12 )]
 editor/display_folded = false
 position = Vector2( 848.162, 280.619 )
-frame = 8
+frame = 12
 
 [node name="valores_enemigos" parent="enemigo" index="0"]
 editor/display_folded = true
