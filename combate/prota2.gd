@@ -28,6 +28,8 @@ func _on_MenuButton_atk_pata():
 func _on_MenuButton2_atk_magia_1():
 	if magia.value>=5:
 		emit_signal("mover", 3)
+	else:
+		emit_signal("mover", 1)
 	pass # Replace with function body.
 
 func medir_vida(delta):

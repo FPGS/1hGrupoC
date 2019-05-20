@@ -27,12 +27,15 @@ func _on_MenuButton_atk_pata():
 func _on_MenuButton2_atk_magia_1():
 	if magia.value>=5:
 		emit_signal("mover",3)
+	else:
+		emit_signal("mover", 1)
 	pass # Replace with function body.
 
 func medir_vida(delta):
 	if delta<=0:
 		get_tree().get_nodes_in_group("sonidos")[0].get_node("zombie").play()
 		get_node("../enemigo").play("Muerte")
+		get_tree().change_scene('res://TittleScreen/GameOver.tscn')
 	else:
 		emit_signal("volver")
 	pass

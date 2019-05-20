@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/y2mate.com - spooky_scary_skeletons_remix_extended_mix_q6-ZGAGcJrk.ogg-68714eae0da901ffcd639c7f6fb0736d.oggstr"
+
+[deps]
+
+source_file="res://musica/y2mate.com - spooky_scary_skeletons_remix_extended_mix_q6-ZGAGcJrk.ogg"
+dest_files=[ "res://.import/y2mate.com - spooky_scary_skeletons_remix_extended_mix_q6-ZGAGcJrk.ogg-68714eae0da901ffcd639c7f6fb0736d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
