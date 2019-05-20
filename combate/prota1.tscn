@@ -28,12 +28,11 @@ position = Vector2( 180, 501 )
 scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 8
+frame = 10
 playing = true
 script = ExtResource( 2 )
 
 [node name="menu_accion" type="Container" parent="."]
-editor/display_folded = true
 margin_left = 250.0
 margin_top = -117.838
 margin_right = 550.0
@@ -77,14 +76,6 @@ script = ExtResource( 4 )
 [node name="PopupMenu2" type="PopupMenu" parent="menu_accion/magia"]
 margin_right = 20.0
 margin_bottom = 20.0
-
-[node name="otro" type="MenuButton" parent="menu_accion"]
-margin_left = 200.0
-margin_right = 300.0
-margin_bottom = 39.0
-text = "defensa"
-flat = false
-align = 0
 
 [node name="valores_aliados" type="MarginContainer" parent="."]
 editor/display_folded = true

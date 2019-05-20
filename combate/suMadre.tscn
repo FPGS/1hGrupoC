@@ -1,0 +1,292 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://fondo.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://fondo.gd" type="Script" id=2]
+[ext_resource path="res://prota1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://golem3_anim.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://prota.gd" type="Script" id=5]
+[ext_resource path="res://espada.tres" type="Animation" id=6]
+[ext_resource path="res://magia.tres" type="Animation" id=7]
+[ext_resource path="res://patada.tres" type="Animation" id=8]
+[ext_resource path="res://volver.tres" type="Animation" id=9]
+[ext_resource path="res://AnimationPlayer.gd" type="Script" id=10]
+[ext_resource path="res://otros/background/fuego/tile018.png" type="Texture" id=11]
+[ext_resource path="res://otros/background/fuego/tile019.png" type="Texture" id=12]
+[ext_resource path="res://otros/background/fuego/tile020.png" type="Texture" id=13]
+[ext_resource path="res://otros/background/fuego/tile021.png" type="Texture" id=14]
+[ext_resource path="res://otros/background/fuego/tile022.png" type="Texture" id=15]
+[ext_resource path="res://otros/background/fuego/tile023.png" type="Texture" id=16]
+[ext_resource path="res://otros/background/fuego/tile012.png" type="Texture" id=17]
+[ext_resource path="res://otros/background/fuego/tile013.png" type="Texture" id=18]
+[ext_resource path="res://otros/background/fuego/tile014.png" type="Texture" id=19]
+[ext_resource path="res://otros/background/fuego/tile015.png" type="Texture" id=20]
+[ext_resource path="res://otros/background/fuego/tile016.png" type="Texture" id=21]
+[ext_resource path="res://otros/background/fuego/tile017.png" type="Texture" id=22]
+[ext_resource path="res://otros/background/fuego/tile000.png" type="Texture" id=23]
+[ext_resource path="res://otros/background/fuego/tile001.png" type="Texture" id=24]
+[ext_resource path="res://otros/background/fuego/tile002.png" type="Texture" id=25]
+[ext_resource path="res://otros/background/fuego/tile003.png" type="Texture" id=26]
+[ext_resource path="res://otros/background/fuego/tile004.png" type="Texture" id=27]
+[ext_resource path="res://otros/background/fuego/tile005.png" type="Texture" id=28]
+[ext_resource path="res://otros/background/fuego/tile006.png" type="Texture" id=29]
+[ext_resource path="res://otros/background/fuego/tile007.png" type="Texture" id=30]
+[ext_resource path="res://otros/background/fuego/tile008.png" type="Texture" id=31]
+[ext_resource path="res://otros/background/fuego/tile009.png" type="Texture" id=32]
+[ext_resource path="res://otros/background/fuego/tile010.png" type="Texture" id=33]
+[ext_resource path="res://otros/background/fuego/tile011.png" type="Texture" id=34]
+[ext_resource path="res://prota2.tscn" type="PackedScene" id=35]
+[ext_resource path="res://golem2_anim.tres" type="SpriteFrames" id=36]
+[ext_resource path="res://prota2.gd" type="Script" id=37]
+[ext_resource path="res://espada2.tres" type="Animation" id=38]
+[ext_resource path="res://patada2.tres" type="Animation" id=39]
+[ext_resource path="res://volver2.tres" type="Animation" id=40]
+[ext_resource path="res://AnimationPlayer2.gd" type="Script" id=41]
+[ext_resource path="res://enemigo.tscn" type="PackedScene" id=42]
+[ext_resource path="res://golem1_anim.tres" type="SpriteFrames" id=43]
+[ext_resource path="res://enemigo.gd" type="Script" id=44]
+[ext_resource path="res://espada3.tres" type="Animation" id=45]
+[ext_resource path="res://espada4.tres" type="Animation" id=46]
+[ext_resource path="res://magia3.tres" type="Animation" id=47]
+[ext_resource path="res://magia4.tres" type="Animation" id=48]
+[ext_resource path="res://patada3.tres" type="Animation" id=49]
+[ext_resource path="res://patada4.tres" type="Animation" id=50]
+[ext_resource path="res://volver3.tres" type="Animation" id=51]
+[ext_resource path="res://volver4.tres" type="Animation" id=52]
+[ext_resource path="res://AnimationPlayer3.gd" type="Script" id=53]
+[ext_resource path="res://otros/sonidos/espada.ogg" type="AudioStream" id=54]
+[ext_resource path="res://otros/sonidos/maquia_impacto.ogg" type="AudioStream" id=55]
+[ext_resource path="res://otros/sonidos/patada.ogg" type="AudioStream" id=56]
+[ext_resource path="res://otros/sonidos/fondofantasma.ogg" type="AudioStream" id=57]
+[ext_resource path="res://otros/sonidos/zombie-death.ogg" type="AudioStream" id=58]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "esplotar",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "lanzar",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": false,
+"name": "crear",
+"speed": 11.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "magia2"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00149233, 1.98531 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.00149233, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "crear", "lanzar", "esplotar" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -19.998, -136.239 ), Vector2( -25.9023, -137.543 ), Vector2( 2555.63, 432.294 ), Vector2( 2555.63, 432.294 ), Vector2( -19.998, -136.239 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Idle", "Tirar", "Idle" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../sonidos/magia:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../enemigo:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Hurt", "Idle" ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="fondo" type="AnimatedSprite" parent="."]
+position = Vector2( 530.191, 305.047 )
+scale = Vector2( 1.64238, 1.62681 )
+frames = ExtResource( 1 )
+frame = 2
+playing = true
+script = ExtResource( 2 )
+
+[node name="prota1" type="AnimatedSprite" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 194.093, 439.385 )
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 4 )
+animation = "Tirar"
+frame = 11
+playing = true
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="prota1"]
+anims/espada = ExtResource( 6 )
+anims/magia = ExtResource( 7 )
+anims/patada = ExtResource( 8 )
+anims/volver = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="prota1"]
+visible = false
+position = Vector2( -60.4377, -25.9019 )
+scale = Vector2( 10, 10 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "esplotar"
+frame = 5
+playing = true
+flip_h = true
+
+[node name="prota2" type="AnimatedSprite" parent="." instance=ExtResource( 35 )]
+editor/display_folded = true
+position = Vector2( 192.38, 150 )
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 36 )
+animation = "Idle"
+frame = 9
+playing = true
+script = ExtResource( 37 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="prota2"]
+anims/espada2 = ExtResource( 38 )
+anims/magia2 = SubResource( 2 )
+anims/patada2 = ExtResource( 39 )
+anims/volver2 = ExtResource( 40 )
+script = ExtResource( 41 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="prota2"]
+visible = false
+position = Vector2( -19.998, -136.239 )
+scale = Vector2( 10, 10 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "esplotar"
+frame = 5
+playing = true
+flip_h = true
+
+[node name="enemigo" type="AnimatedSprite" parent="." instance=ExtResource( 42 )]
+editor/display_folded = true
+position = Vector2( 848.162, 280.619 )
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 43 )
+animation = "Idle"
+frame = 9
+playing = true
+flip_h = true
+script = ExtResource( 44 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo"]
+anims/espada3 = ExtResource( 45 )
+anims/espada4 = ExtResource( 46 )
+anims/magia3 = ExtResource( 47 )
+anims/magia4 = ExtResource( 48 )
+anims/patada3 = ExtResource( 49 )
+anims/patada4 = ExtResource( 50 )
+anims/volver3 = ExtResource( 51 )
+anims/volver4 = ExtResource( 52 )
+script = ExtResource( 53 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="enemigo"]
+visible = false
+position = Vector2( -2482.05, 554.692 )
+scale = Vector2( 10, 10 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "esplotar"
+frame = 5
+playing = true
+
+[node name="sonidos" type="Node" parent="." groups=[
+"sonidos",
+]]
+editor/display_folded = true
+
+[node name="espada" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 54 )
+
+[node name="espada2" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 54 )
+
+[node name="magia" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 55 )
+
+[node name="patada" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 56 )
+
+[node name="fondo2" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 57 )
+autoplay = true
+
+[node name="zombie" type="AudioStreamPlayer" parent="sonidos"]
+stream = ExtResource( 58 )
+
+[connection signal="mover" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_mover"]
+[connection signal="volver" from="prota1" to="prota1/AnimationPlayer" method="_on_prota1_volver"]
+[connection signal="animation_finished" from="prota1/AnimationPlayer" to="prota1/AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="medir_vida" from="prota1/AnimationPlayer" to="prota1" method="medir_vida"]
+[connection signal="turno_enemigo" from="prota1/AnimationPlayer" to="enemigo" method="turno_enemigo"]
+[connection signal="mover" from="prota2" to="prota2/AnimationPlayer2" method="_on_prota2_mover"]
+[connection signal="turno_enemigo" from="prota2" to="enemigo" method="turno_enemigo" binds= [ 2 ]]
+[connection signal="volver" from="prota2" to="prota2/AnimationPlayer2" method="_on_prota2_volver"]
+[connection signal="animation_finished" from="prota2/AnimationPlayer2" to="prota2/AnimationPlayer2" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="medir_vida" from="prota2/AnimationPlayer2" to="prota2" method="medir_vida"]
+[connection signal="turno_enemigo" from="prota2/AnimationPlayer2" to="enemigo" method="turno_enemigo"]
+[connection signal="mover" from="enemigo" to="enemigo/AnimationPlayer" method="_on_enemigo_mover"]
+[connection signal="volver" from="enemigo" to="enemigo/AnimationPlayer" method="_on_enemigo_volver"]
+[connection signal="animation_finished" from="enemigo/AnimationPlayer" to="enemigo/AnimationPlayer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="medir_vida" from="enemigo/AnimationPlayer" to="enemigo" method="medir_vida"]

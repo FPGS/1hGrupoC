@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://inicio.gd" type="Script" id=1]
 [ext_resource path="res://otros/fonts/28 Days Later.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://BotonPlay.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -43,10 +44,12 @@ margin_right = 710.0
 margin_bottom = 560.0
 custom_fonts/font = SubResource( 2 )
 text = "Jugar"
+script = ExtResource( 3 )
 
 [node name="MensajeTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [connection signal="pressed" from="BotonPlay" to="." method="_on_BotonPlay_pressed"]
+[connection signal="pressed" from="BotonPlay" to="BotonPlay" method="_on_BotonPlay_pressed"]
 [connection signal="timeout" from="MensajeTimer" to="." method="_on_MensajeTimer_timeout"]

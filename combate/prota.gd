@@ -26,12 +26,7 @@ func _on_MenuButton_atk_pata():
 
 func _on_MenuButton2_atk_magia_1():
 	if magia.value>=5:
-		vida_enemigo.set_value(vida_enemigo.value-10)
-		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
-		magia.set_value(magia.value-5)
-		magia_actual_num.set_text(String(magia.get_value()))
-		medir_vida(vida_enemigo.value)#
-		get_tree().get_nodes_in_group("sonidos")[0].get_node("magia").play()
+		emit_signal("mover",3)
 	pass # Replace with function body.
 
 func medir_vida(delta):
