@@ -158,11 +158,12 @@ position = Vector2( 198.138, 222.936 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 15
+frame = 14
 playing = true
 script = ExtResource( 94 )
 
 [node name="menu_accion" type="Container" parent="."]
+visible = false
 margin_left = 250.0
 margin_top = -117.838
 margin_right = 550.0

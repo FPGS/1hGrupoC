@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+fallback/0 = SubResource( 2 )
+
+[node name="Selec Character" type="Button"]
+margin_top = 97.0
+margin_right = 588.0
+margin_bottom = 190.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 103.02
+margin_top = 4.04065
+margin_right = 483.02
+margin_bottom = 64.0406
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0.929412, 0.309804, 0.309804, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "NEW CHARACTER"
+align = 1
+valign = 1
+

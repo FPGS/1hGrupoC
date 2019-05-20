@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://imagenes/soulworker.png" type="Texture" id=1]
+[ext_resource path="res://TittleScreen/buttons/New Game Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TittleScreen/buttons/Selec CharacterButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TittleScreen/buttons/OptionsButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TittleScreen/buttons/ExitButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TittleScreen/buttonMusic/MusicButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://musica/DJVI - Cycles.ogg" type="AudioStream" id=7]
+
+[node name="TittleScreen" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Menu" type="VBoxContainer" parent="Control"]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1160.0
+margin_bottom = 640.0
+
+[node name="Logo" type="TextureRect" parent="Control/Menu"]
+margin_right = 1040.0
+margin_bottom = 241.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="CenterRow" type="Container" parent="Control/Menu"]
+margin_top = 245.0
+margin_right = 1040.0
+margin_bottom = 400.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Control/Menu/CenterRow"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1033.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="New Game" parent="Control/Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_right = 1026.0
+margin_bottom = 141.0
+
+[node name="Selec Character" parent="Control/Menu/CenterRow/Buttons/New Game" instance=ExtResource( 3 )]
+margin_left = -12.0
+margin_top = 72.0
+margin_bottom = 322.0
+
+[node name="Options" parent="Control/Menu/CenterRow/Buttons/New Game/Selec Character" instance=ExtResource( 4 )]
+margin_left = 4.0
+margin_top = 80.0
+margin_bottom = 255.0
+
+[node name="Exit" parent="Control/Menu/CenterRow/Buttons/New Game/Selec Character/Options" instance=ExtResource( 5 )]
+margin_left = -3.0
+margin_top = 86.0
+margin_right = 533.0
+margin_bottom = 182.0
+
+[node name="CenterRow2" type="Container" parent="Control/Menu"]
+margin_top = 404.0
+margin_right = 1040.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu/CenterRow2"]
+margin_left = 741.0
+margin_top = -30.0
+margin_right = 1129.0
+margin_bottom = 143.0
+
+[node name="Music" parent="Control/Menu/CenterRow2/VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 388.0
+margin_bottom = 173.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 5.049
+autoplay = true
+

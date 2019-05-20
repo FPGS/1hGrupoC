@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TittleScreen/buttonMusic/Music.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Music" index="0" instance=ExtResource( 1 )]
+margin_left = 917.0
+margin_top = 107.0
+margin_right = -25.0
+margin_bottom = -498.0
+
+[node name="Label" parent="." index="0"]
+margin_left = 106.0
+margin_top = 78.0
+margin_right = 354.0
+margin_bottom = 197.0
+custom_fonts/font = SubResource( 1 )
+

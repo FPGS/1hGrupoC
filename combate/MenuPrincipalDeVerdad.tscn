@@ -1,0 +1,193 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://New Game.gd" type="Script" id=1]
+[ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://imagenes/soulworker.png" type="Texture" id=4]
+[ext_resource path="res://musica/DJVI - Cycles.ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Container" type="Container" parent="."]
+margin_left = 394.0
+margin_top = 250.0
+margin_right = 868.0
+margin_bottom = 710.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Container"]
+anchor_right = 1.0
+margin_right = 26.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="New Game" type="Button" parent="Container/Buttons"]
+margin_right = 500.0
+margin_bottom = 102.0
+rect_pivot_offset = Vector2( 261.869, 290.27 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Container/Buttons/New Game"]
+margin_left = 59.707
+margin_top = 18.1354
+margin_right = 408.707
+margin_bottom = 78.1354
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.780392, 1, 0.541176, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.133333, 1, 0.0117647, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 5
+text = "NEW GAME"
+align = 1
+
+[node name="Select Character" type="Button" parent="Container/Buttons"]
+margin_top = 106.0
+margin_right = 500.0
+margin_bottom = 208.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label2" type="Label" parent="Container/Buttons/Select Character"]
+margin_left = 5.60913
+margin_top = -4.21478
+margin_right = 465.609
+margin_bottom = 55.7852
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.513726, 0.513726, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.219608, 0.219608, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 5
+text = "SELECT CHARACTER"
+align = 1
+
+[node name="Options" type="Button" parent="Container/Buttons"]
+margin_top = 212.0
+margin_right = 500.0
+margin_bottom = 314.0
+rect_pivot_offset = Vector2( 243.864, 156.588 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label3" type="Label" parent="Container/Buttons/Options"]
+margin_left = 102.247
+margin_top = -11.9993
+margin_right = 351.247
+margin_bottom = 48.0007
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.666667, 0.968627, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.952941, 1, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 5
+text = "OPTIONS"
+align = 1
+
+[node name="Exit" type="Button" parent="Container/Buttons"]
+margin_top = 318.0
+margin_right = 500.0
+margin_bottom = 420.0
+rect_pivot_offset = Vector2( 1.80533, 1.77618 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label4" type="Label" parent="Container/Buttons/Exit"]
+anchor_bottom = 0.276
+margin_left = 151.869
+margin_top = -10.7628
+margin_right = 302.869
+margin_bottom = 40.6772
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.984314, 0.988235, 0.521569, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.890196, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 5
+text = "EXIT"
+align = 1
+
+[node name="Container2" type="Container" parent="."]
+margin_left = 980.0
+margin_top = 626.0
+margin_right = 1237.0
+margin_bottom = 666.0
+
+[node name="Button" type="VBoxContainer" parent="Container2"]
+margin_right = 239.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Music " type="Button" parent="Container2/Button"]
+margin_right = 239.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label" type="Label" parent="Container2/Button/Music "]
+margin_left = 11.6068
+margin_top = 1.16071
+margin_right = 235.607
+margin_bottom = 36.1607
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.803922, 0, 1, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 4
+text = "Music On/Off"
+
+[node name="Logo" type="TextureRect" parent="."]
+margin_left = 101.842
+margin_top = 24.5519
+margin_right = 1147.84
+margin_bottom = 265.552
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 5.049
+autoplay = true
+
+[connection signal="pressed" from="Container/Buttons/New Game" to="Container/Buttons/New Game" method="_on_New_Game_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/y2mate.com - djvi_cant_let_go_fLnF-QnR1Zw.ogg-b022398d0450e874d55b1f5fbe47a7ba.oggstr"
+
+[deps]
+
+source_file="res://musica/y2mate.com - djvi_cant_let_go_fLnF-QnR1Zw.ogg"
+dest_files=[ "res://.import/y2mate.com - djvi_cant_let_go_fLnF-QnR1Zw.ogg-b022398d0450e874d55b1f5fbe47a7ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

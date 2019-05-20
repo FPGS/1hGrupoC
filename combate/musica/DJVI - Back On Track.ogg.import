@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DJVI - Back On Track.ogg-5cd15532d55e36edf8edb4263e9e6818.oggstr"
+
+[deps]
+
+source_file="res://musica/DJVI - Back On Track.ogg"
+dest_files=[ "res://.import/DJVI - Back On Track.ogg-5cd15532d55e36edf8edb4263e9e6818.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
