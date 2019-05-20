@@ -1,6 +1,5 @@
 extends AnimationPlayer
 signal medir_vida(delta)
-signal turno_enemigo
 var prota=1
 onready var vida=get_node("../../prota1/valores_aliados/constantes/vida/barra1/PS")
 onready var vida_actual_num=get_node("../../prota1/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
@@ -67,7 +66,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		get_node("../../prota"+str(1)+"/menu_accion").visible=true
 	pass # Replace with function body.
 
-func _on_enemigo_volver(pro):
+func _on_enemigo_volver():
 	if prota==1:
 		play("volver3")
 	if prota==2:

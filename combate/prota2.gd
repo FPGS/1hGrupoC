@@ -1,5 +1,4 @@
 extends AnimatedSprite
-signal turno_enemigo 
 signal mover
 signal volver
 
@@ -36,6 +35,7 @@ func medir_vida(delta):
 	if delta<=0:
 		get_tree().get_nodes_in_group("sonidos")[0].get_node("zombie").play()
 		get_node("../enemigo").play("Muerte")
+		get_tree().change_scene('res://TittleScreen/GameOver.tscn')
 	else:
 		emit_signal("volver")
 	pass

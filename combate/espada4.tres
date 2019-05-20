@@ -64,7 +64,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Node2D/prota2:animation")
+tracks/5/path = NodePath("../prota2:animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false

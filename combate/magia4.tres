@@ -40,27 +40,27 @@ tracks/2/keys = {
 "values": [ Vector2( -30.0254, -110.117 ), Vector2( -2549, -739.642 ), Vector2( -2549, -739.642 ), Vector2( -30.0254, -110.117 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../Node2D/prota2:animation")
+tracks/3/path = NodePath("../sonidos/magia:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.5, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Hurt", "Idle" ]
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../sonidos/magia:playing")
+tracks/4/path = NodePath("../prota2:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ "Hurt", "Idle" ]
 }
 

@@ -2,10 +2,9 @@ extends AnimatedSprite
 var per=1
 signal mover(delta, pro)
 signal volver(per)
-onready var vida=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/PS")
-onready var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
+
 onready var magia=get_node("valores_enemigos/constantes/magia/barra2/PM")
-onready var magia_actual_num=get_node("valores_enemigos/constantes/magia/barra2/contenedor/fondo/valor")
+
 func _ready():
 	
 	pass
@@ -18,13 +17,12 @@ func medir_vida(delta):
 	if delta<=0:
 		get_node("../prota"+str(per)).play("Muerte")
 	else:
-		emit_signal("volver", per)
+		emit_signal("volver")
 	
 
 func turno_enemigo(personaje):
 	per=personaje
-	var vida=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/PS")
-	var vida_actual_num=get_node("../prota"+str(per)+"/valores_aliados/constantes/vida/barra1/contenedor/fondo/valor")
+	
 	var tipo_ataque=int(rand_range(1,4))
 	if magia.value<5:
 		tipo_ataque=1

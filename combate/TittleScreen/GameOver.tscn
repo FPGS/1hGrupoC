@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://musica/y2mate.com - spooky_scary_skeletons_remix_extended_mix_q6-ZGAGcJrk.ogg" type="AudioStream" id=1]
 [ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TittleScreen/Button.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -60,6 +61,7 @@ margin_bottom = 300.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
+script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Control/Container/VBoxContainer/Button"]
 margin_right = 600.0
@@ -76,3 +78,4 @@ text = "RETURN"
 align = 1
 valign = 1
 
+[connection signal="pressed" from="Control/Container/VBoxContainer/Button" to="Control/Container/VBoxContainer/Button" method="_on_Button_pressed"]

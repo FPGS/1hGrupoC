@@ -13,6 +13,7 @@ func _on_prota1_mover(delta):
 	if(delta == 1):
 		play("espada")
 	if(delta == 2):
+		print("llega")
 		play("patada")
 	if(delta==3):
 		play("magia")
@@ -25,6 +26,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
 		emit_signal("medir_vida",vida_enemigo.value)
 	if anim_name == "patada":
+		vida_enemigo.set_value(vida_enemigo.value-rand_range(4,8) )#elige un valor aleatorio para el daño
+		vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value())) #actualizar barra de vida
 		emit_signal("medir_vida",vida_enemigo.value)
 	if anim_name == "magia":
 		vida_enemigo.set_value(vida_enemigo.value-10)
