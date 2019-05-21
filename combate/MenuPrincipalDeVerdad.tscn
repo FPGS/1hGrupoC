@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://New Game.gd" type="Script" id=1]
 [ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://imagenes/soulworker.png" type="Texture" id=4]
-[ext_resource path="res://musica/DJVI - Cycles.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Select Character.gd" type="Script" id=3]
+[ext_resource path="res://Options.gd" type="Script" id=4]
+[ext_resource path="res://Exit.gd" type="Script" id=5]
+[ext_resource path="res://Music .gd" type="Script" id=6]
+[ext_resource path="res://TittleScreen/fonts/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://imagenes/soulworker.png" type="Texture" id=8]
+[ext_resource path="res://musica/DJVI - Cycles.ogg" type="AudioStream" id=9]
+[ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -24,7 +29,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 3 )
+font_data = ExtResource( 7 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -78,6 +83,7 @@ margin_bottom = 208.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
+script = ExtResource( 3 )
 
 [node name="Label2" type="Label" parent="Container/Buttons/Select Character"]
 margin_left = 5.60913
@@ -102,6 +108,7 @@ rect_pivot_offset = Vector2( 243.864, 156.588 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
+script = ExtResource( 4 )
 
 [node name="Label3" type="Label" parent="Container/Buttons/Options"]
 margin_left = 102.247
@@ -126,6 +133,7 @@ rect_pivot_offset = Vector2( 1.80533, 1.77618 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
+script = ExtResource( 5 )
 
 [node name="Label4" type="Label" parent="Container/Buttons/Exit"]
 anchor_bottom = 0.276
@@ -163,6 +171,7 @@ margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
+script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Container2/Button/Music "]
 margin_left = 11.6068
@@ -182,12 +191,19 @@ margin_left = 101.842
 margin_top = 24.5519
 margin_right = 1147.84
 margin_bottom = 265.552
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 stretch_mode = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 9 )
 volume_db = 5.049
 autoplay = true
+script = ExtResource( 10 )
 
 [connection signal="pressed" from="Container/Buttons/New Game" to="Container/Buttons/New Game" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="Container/Buttons/Select Character" to="Container/Buttons/Select Character" method="_on_Select_Character_pressed"]
+[connection signal="pressed" from="Container/Buttons/Options" to="Container/Buttons/Options" method="_on_Options_pressed"]
+[connection signal="pressed" from="Container/Buttons/Exit" to="Container/Buttons/Exit" method="_on_Exit_pressed"]
+[connection signal="apagar" from="Container2/Button/Music " to="AudioStreamPlayer" method="_on_Music__apagar"]
+[connection signal="encender" from="Container2/Button/Music " to="AudioStreamPlayer" method="_on_Music__encender"]
+[connection signal="pressed" from="Container2/Button/Music " to="Container2/Button/Music " method="_on_Music__pressed"]
