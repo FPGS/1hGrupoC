@@ -1,8 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Personajes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prota1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prota1.gd" type="Script" id=3]
+[ext_resource path="res://TittleScreen/MenuButton.gd" type="Script" id=4]
 
 [node name="Node2D" type="Control"]
 
 [node name="Select character" parent="." instance=ExtResource( 1 )]
 
+[node name="prota1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 375.158, 229.803 )
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 3 )
+
+[node name="menu_accion" parent="prota1" index="0"]
+visible = false
+
+[node name="ataque" parent="prota1/menu_accion" index="0"]
+visible = false
+script = null
+
+[node name="magia" parent="prota1/menu_accion" index="1"]
+editor/display_folded = true
+visible = false
+script = null
+
+[node name="valores_aliados" parent="prota1" index="1"]
+visible = false
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 204.053
+margin_top = 477.006
+margin_right = 576.053
+margin_bottom = 566.006
+text = "Skin"
+script = ExtResource( 4 )
+
+[node name="PopupMenu2" type="PopupMenu" parent="MenuButton"]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[connection signal="camvio" from="MenuButton" to="prota1" method="_on_MenuButton_camvio"]
+
+[editable path="prota1"]

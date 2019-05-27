@@ -1,36 +1,81 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://golem3_anim.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://prota.gd" type="Script" id=2]
-[ext_resource path="res://Atake_per1.gd" type="Script" id=3]
-[ext_resource path="res://Magia_per1.gd" type="Script" id=4]
-[ext_resource path="res://assets/GUI/label_HP_bg.png" type="Texture" id=5]
-[ext_resource path="res://assets/GUI/label_HP.png" type="Texture" id=6]
-[ext_resource path="res://assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://assets/GUI/lifebar_bg.png" type="Texture" id=8]
-[ext_resource path="res://assets/GUI/lifebar_fill.png" type="Texture" id=9]
-[ext_resource path="res://assets/GUI/label_EP.png" type="Texture" id=10]
-[ext_resource path="res://assets/GUI/energy_bar_bg.png" type="Texture" id=11]
-[ext_resource path="res://assets/GUI/energy_bar_fill.png" type="Texture" id=12]
+[ext_resource path="res://Atake_per1.gd" type="Script" id=2]
+[ext_resource path="res://Magia_per1.gd" type="Script" id=3]
+[ext_resource path="res://assets/GUI/label_HP_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/label_HP.png" type="Texture" id=5]
+[ext_resource path="res://assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/GUI/lifebar_bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUI/lifebar_fill.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUI/label_EP.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUI/energy_bar_bg.png" type="Texture" id=10]
+[ext_resource path="res://assets/GUI/energy_bar_fill.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFont" id=1]
-size = 28
-extra_spacing_bottom = 8
-font_data = ExtResource( 7 )
+[sub_resource type="GDScript" id=1]
+script/source = "extends AnimatedSprite
+signal volver
+signal mover
+onready var vida=get_node(\"valores_aliados/constantes/vida/barra1/PS\")
+onready var vida_enemigo=get_node(\"../enemigo/valores_enemigos/constantes/vida/barra1/PS\")
+onready var vida_actual_num=get_node(\"valores_aliados/constantes/vida/barra1/contenedor/fondo/valor\")
+onready var vida_actual_enemigo_num=get_node(\"../enemigo/valores_enemigos/constantes/vida/barra1/contenedor/fondo/valor\")
+onready var magia=get_node(\"valores_aliados/constantes/magia/barra2/PM\")
+onready var magia_actual_num=get_node(\"valores_aliados/constantes/magia/barra2/contenedor/fondo/valor\")
+func _ready():
+	
+	vida_actual_num.set_text(String(vida.get_value()))
+	vida_actual_enemigo_num.set_text(String(vida_enemigo.get_value()))
+	magia_actual_num.set_text(String(magia.get_value()))
+	
+	pass
+
+
+func _on_MenuButton_atk_esp(): 
+	emit_signal(\"mover\", 1)
+	pass # Replace with function body.
+
+func _on_MenuButton_atk_pata():
+	emit_signal(\"mover\", 2)
+	pass # Replace with function body.
+
+func _on_MenuButton2_atk_magia_1():
+	if magia.value>=5:
+		emit_signal(\"mover\",3)
+	else:
+		emit_signal(\"mover\", 1)
+	pass # Replace with function body.
+
+func medir_vida(delta):
+	if delta<=0:
+		get_tree().get_nodes_in_group(\"sonidos\")[0].get_node(\"zombie\").play()
+		get_node(\"../enemigo\").play(\"Muerte\")
+		get_tree().change_scene('res://TittleScreen/GameOver.tscn')
+	else:
+		emit_signal(\"volver\")
+	pass
+
+
+"
 
 [sub_resource type="DynamicFont" id=2]
+size = 28
+extra_spacing_bottom = 8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 18
 extra_spacing_bottom = -3
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [node name="prota1" type="AnimatedSprite"]
 position = Vector2( 180, 501 )
 scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 8
+frame = 9
 playing = true
-script = ExtResource( 2 )
+script = SubResource( 1 )
 
 [node name="menu_accion" type="Container" parent="."]
 margin_left = 250.0
@@ -55,7 +100,7 @@ text = "Ataque"
 flat = false
 align = 0
 switch_on_hover = true
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="PopupMenu2" type="PopupMenu" parent="menu_accion/ataque"]
 margin_left = -300.0
@@ -71,7 +116,7 @@ toggle_mode = true
 text = "Magia"
 flat = false
 align = 0
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="PopupMenu2" type="PopupMenu" parent="menu_accion/magia"]
 margin_right = 20.0
@@ -105,18 +150,18 @@ margin_bottom = 53.0
 margin_right = 100.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 100, 40 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="tipo" type="TextureRect" parent="valores_aliados/constantes/vida/barra1/contenedor/fondo"]
 margin_right = 50.0
 margin_bottom = 53.0
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="valor" type="Label" parent="valores_aliados/constantes/vida/barra1/contenedor/fondo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "10"
 align = 2
 valign = 2
@@ -126,8 +171,8 @@ margin_left = 104.0
 margin_right = 500.0
 margin_bottom = 53.0
 value = 50.0
-texture_under = ExtResource( 8 )
-texture_progress = ExtResource( 9 )
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
 
 [node name="magia" type="VBoxContainer" parent="valores_aliados/constantes"]
 margin_left = 504.0
@@ -146,18 +191,18 @@ rect_min_size = Vector2( 75, 53 )
 [node name="fondo" type="NinePatchRect" parent="valores_aliados/constantes/magia/barra2/contenedor"]
 margin_right = 75.0
 margin_bottom = 53.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="tipo" type="TextureRect" parent="valores_aliados/constantes/magia/barra2/contenedor/fondo"]
 margin_right = 50.0
 margin_bottom = 53.0
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 stretch_mode = 4
 
 [node name="valor" type="Label" parent="valores_aliados/constantes/magia/barra2/contenedor/fondo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "50"
 align = 2
 valign = 1
@@ -168,8 +213,8 @@ margin_right = 329.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 250, 0 )
 value = 10.0
-texture_under = ExtResource( 11 )
-texture_progress = ExtResource( 12 )
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 11 )
 
 [node name="potis" type="HBoxContainer" parent="valores_aliados"]
 margin_right = 841.0
