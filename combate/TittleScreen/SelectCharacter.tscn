@@ -1,23 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Personajes.tscn" type="PackedScene" id=1]
-[ext_resource path="res://prota1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://prota1.gd" type="Script" id=3]
-[ext_resource path="res://otros/fonts/Backtrack-Demo.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://TittleScreen/MenuButton.gd" type="Script" id=5]
+[ext_resource path="res://TittleScreen/Button.gd" type="Script" id=2]
+[ext_resource path="res://prota1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prota1.gd" type="Script" id=4]
+[ext_resource path="res://otros/fonts/Backtrack-Demo.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://TittleScreen/MenuButton.gd" type="Script" id=6]
+[ext_resource path="res://prota2.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [node name="Node2D" type="Control"]
 
 [node name="Select character" parent="." instance=ExtResource( 1 )]
+editor/display_folded = false
 
-[node name="prota1" parent="." instance=ExtResource( 2 )]
+[node name="Button" type="Button" parent="Select character"]
+margin_right = 189.0
+margin_bottom = 43.0
+flat = true
+script = ExtResource( 2 )
+
+[node name="prota1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 375.158, 229.803 )
 scale = Vector2( 0.75, 0.75 )
-frame = 10
-script = ExtResource( 3 )
+frame = 16
+script = ExtResource( 4 )
 
 [node name="menu_accion" parent="prota1" index="0"]
 visible = false
@@ -41,13 +50,41 @@ margin_top = 327.137
 margin_right = 146.328
 margin_bottom = 416.137
 custom_fonts/font = SubResource( 1 )
-text = "Skin"
+text = "SKIN"
 flat = false
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="PopupMenu2" type="PopupMenu" parent="prota1/MenuButton"]
 margin_right = 20.0
 margin_bottom = 20.0
+
+[node name="prota2" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 947.185, 235.06 )
+scale = Vector2( 0.75, 0.75 )
+frame = 7
+
+[node name="valores_aliados" parent="prota2" index="1"]
+visible = false
+
+[node name="MenuButton2" type="MenuButton" parent="prota2"]
+editor/display_folded = true
+margin_left = -225.0
+margin_top = 327.0
+margin_right = 146.0
+margin_bottom = 416.0
+custom_fonts/font = SubResource( 1 )
+text = "SKIN"
+flat = false
+script = ExtResource( 6 )
+
+[node name="PopupMenu2" type="PopupMenu" parent="prota2/MenuButton2"]
+margin_right = 20.0
+margin_bottom = 20.0
+[connection signal="pressed" from="Select character/Button" to="Select character/Button" method="_on_Button_pressed"]
 [connection signal="camvio" from="prota1/MenuButton" to="prota1" method="_on_MenuButton_camvio"]
+[connection signal="camvio" from="prota2/MenuButton2" to="prota2" method="_on_MenuButton_camvio"]
 
 [editable path="prota1"]
+
+[editable path="prota2"]

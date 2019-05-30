@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://golem3_anim.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://personaje/angel1_anim.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Atake_per1.gd" type="Script" id=2]
 [ext_resource path="res://Magia_per1.gd" type="Script" id=3]
 [ext_resource path="res://assets/GUI/label_HP_bg.png" type="Texture" id=4]
@@ -73,6 +73,7 @@ position = Vector2( 180, 501 )
 scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 1 )
 animation = "Idle"
+frame = 13
 playing = true
 script = SubResource( 1 )
 

@@ -16,4 +16,5 @@ func _ready():
 func _on_MenuButton_camvio(string):
 	
 	get_node("").set_sprite_frames(load(string))
+	get_tree().('res://suMadre.tscn').get_node("Node2D/prota1").set_sprite_frames(load(string))
 	pass # Replace with function body.
