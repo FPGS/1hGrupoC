@@ -199,7 +199,6 @@ stream = ExtResource( 9 )
 volume_db = 5.049
 autoplay = true
 script = ExtResource( 10 )
-
 [connection signal="pressed" from="Container/Buttons/New Game" to="Container/Buttons/New Game" method="_on_New_Game_pressed"]
 [connection signal="pressed" from="Container/Buttons/Select Character" to="Container/Buttons/Select Character" method="_on_Select_Character_pressed"]
 [connection signal="pressed" from="Container/Buttons/Options" to="Container/Buttons/Options" method="_on_Options_pressed"]

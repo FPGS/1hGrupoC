@@ -7,4 +7,3 @@ margin_right = 1288.0
 margin_bottom = 721.0
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
-

@@ -73,7 +73,6 @@ position = Vector2( 180, 501 )
 scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 9
 playing = true
 script = SubResource( 1 )
 
@@ -219,6 +218,5 @@ texture_progress = ExtResource( 11 )
 [node name="potis" type="HBoxContainer" parent="valores_aliados"]
 margin_right = 841.0
 margin_bottom = 62.0
-
 [connection signal="atk_esp" from="menu_accion/ataque" to="." method="_on_MenuButton_atk_esp"]
 [connection signal="atk_magia_1" from="menu_accion/magia" to="." method="_on_MenuButton2_atk_magia_1"]

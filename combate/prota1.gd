@@ -14,7 +14,6 @@ func _ready():
 
 
 func _on_MenuButton_camvio(string):
-	print(string)
-	print(get_sprite_frames())
-	get_node("").frames.resource_path=string
+	
+	get_node("").set_sprite_frames(load(string))
 	pass # Replace with function body.
