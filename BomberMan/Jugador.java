@@ -8,61 +8,75 @@ import java.util.List;
 public class Jugador extends Rectangle {
 	Color color;
 	public static int VEL = 25;
+	public static final int ARRIBA = 1004;
+	public static final int ABAJO = 1005;
+	public static final int IZQUIERDA = 1006;
+	public static final int DERECHA = 1007;
+
+	static Jugador jugador;
 
 	public Jugador() {
-		super(Jugando.dimensionBloques, Jugando.dimensionBloques, 50, 50);
+		super(Jugando.dimensionBloques, Jugando.dimensionBloques, Jugando.dimensionBloques, Jugando.dimensionBloques);
 		color = Color.blue;
 	}
 
-	public void actualizar(int direccion, List<Mapa> BloquesMapa) {
+	public void actualizar(int direccion) {
 		direccionJugador(direccion);
-		chocarConPared();
-		// chocarConBloquesMapa(BloquesMapa);
-		;
 	}
 
 	public void direccionJugador(int direccion) {
-		if (direccion == 0)
+		if (direccion == IZQUIERDA)
 			x -= VEL;
 
-		if (direccion == 1)
+		if (direccion == DERECHA)
 			x += VEL;
 
-		if (direccion == 2)
+		if (direccion == ARRIBA)
 			y -= VEL;
 
-		if (direccion == 3)
+		if (direccion == ABAJO)
 			y += VEL;
+
 	}
 
-	public void chocarConPared() {
-		if (x <= Jugando.dimensionBloques)
-			x = Jugando.dimensionBloques;
-		if (x >= (Jugando.longitudImagenX - width-Jugando.dimensionBloques))
-			x = Jugando.longitudImagenX - width-Jugando.dimensionBloques;
-		if (y <= Jugando.dimensionBloques)
-			y = Jugando.dimensionBloques;
-		if (y >= (Jugando.longitudImagenY - width-Jugando.dimensionBloques))
-			y = Jugando.longitudImagenY - width-Jugando.dimensionBloques;
-	}
 
-	public void chocarConBloquesMapa(List<Mapa> BloquesMapa) { // esto hay que arreglarlo que no funciona
+	public void chocarConBloquesMapa(List<Mapa> BloquesMapa, List<Mapa> LadrillosMapa, int direccion,
+			List<Bomba> bombas) {
 
-		for(int i=0;i<BloquesMapa.size();i++) {
-			if (x <= BloquesMapa.get(i).x)
-				x = BloquesMapa.get(i).x;
-			if (x >= (BloquesMapa.get(i).x + Jugando.dimensionBloques))
-				x = BloquesMapa.get(i).x + Jugando.dimensionBloques;
-			if (y <= BloquesMapa.get(i).y)
-				y = BloquesMapa.get(i).y;
-			if (y >= (BloquesMapa.get(i).y + Jugando.dimensionBloques))
-				y = BloquesMapa.get(i).y + Jugando.dimensionBloques;
+		for (int i = 0; i < BloquesMapa.size(); i++) {
+			if (this.intersects(BloquesMapa.get(i))) {
+				direccionChocarBloques(direccion);
+			}
+		}
 
+		for (int i = 0; i < LadrillosMapa.size(); i++) {
+			if (this.intersects(LadrillosMapa.get(i))) {
+				direccionChocarBloques(direccion);
+			}
+		}
+
+		for (int i = 0; i < bombas.size(); i++) {
+
+			if (this.intersects(bombas.get(i))) {
+				direccionChocarBloques(direccion);
+			}
 		}
 	}
 
-	public void chocarConLadrillosMapa() {
-
+	public void direccionChocarBloques(int direccion) {
+		switch (direccion) {
+		case ARRIBA:
+			y += VEL;
+			break;
+		case ABAJO:
+			y -= VEL;
+			break;
+		case IZQUIERDA:
+			x += VEL;
+			break;
+		case DERECHA:
+			x -= VEL;
+		}
 	}
 
 

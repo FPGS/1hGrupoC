@@ -3,9 +3,11 @@ package BomberMan;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.List;
 
 public class Mejoras extends Rectangle {
 	Color color;
+	static List<Mejoras> mejoras;
 
 	public Mejoras(int posX, int posY, Color color) {
 		// super(20, 20, 20, 20);
