@@ -32,6 +32,7 @@ public class Explosion extends Rectangle {
 		if (contadorExplosion == tiempoExplosion) {
 			for (int i = 0; i < Bomba.bomba.size(); i++) {
 				explosion.add(new Explosion(Bomba.bomba.get(i).x, Bomba.bomba.get(i).y, Color.red));
+				Bomba.bomba.get(i).cuadranteDiferente = false;
 				Bomba.bomba.remove(i);
 			}
 			contadorExplosion = 0;

@@ -8,10 +8,12 @@ import java.util.List;
 public class Bomba extends Rectangle {
 	Color color;
 	static List<Bomba> bomba;
+	boolean cuadranteDiferente;
 
 	public Bomba(int posX, int posY) {
 		super(posX, posY, 50, 50);
 		color = Color.black;
+		cuadranteDiferente = false;
 	}
 
 	public void actualizar() {
@@ -24,7 +26,7 @@ public class Bomba extends Rectangle {
 	}
 
 	public static void colocarBomba() {
-		bomba.add(new Bomba(2000, 2000));
+		
 		if (Jugador.jugador.x % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
 			if (Jugador.jugador.y % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
 				bomba.get(0).y = ((Jugador.jugador.y / Jugando.dimensionBloques)

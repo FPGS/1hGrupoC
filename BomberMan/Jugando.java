@@ -11,7 +11,7 @@ import java.util.List;
 public class Jugando extends Applet implements Runnable {
 
 	Thread animacion;
-
+	
 	Image imagen;
 
 	static Graphics noseve;
@@ -73,6 +73,13 @@ public class Jugando extends Applet implements Runnable {
 		Enemigos.dibujarEnemigos();
 		Explosion.dibujarExplosion();
 		Jugador.jugador.dibujar(noseve);
+		
+//		Lo comentado aquí abajo es para imprimir el valor de variables y así hacer pruebas
+		/*if(!Bomba.bomba.isEmpty()) {
+			noseve.setColor(Color.black);
+			noseve.drawString(""+Bomba.bomba.get(0).cuadranteDiferente, 100, 100);
+		}*/
+		
 		g.drawImage(imagen, 0, 0, this);
 	}
 
@@ -95,6 +102,7 @@ public class Jugando extends Applet implements Runnable {
 			Jugador.jugador.actualizar(direccion);
 		}
 		if (tecla == 32) {
+			Bomba.bomba.add(new Bomba(100, 75));
 			Bomba.colocarBomba();
 		}
 		return true;

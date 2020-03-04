@@ -54,13 +54,40 @@ public class Jugador extends Rectangle {
 				direccionChocarBloques(direccion);
 			}
 		}
-
+		/*
 		for (int i = 0; i < bombas.size(); i++) {
 
 			if (this.intersects(bombas.get(i))) {
 				direccionChocarBloques(direccion);
 			}
+		}*/
+		if(!bombas.isEmpty()) {
+			if (((x >= (bombas.get(0).x + Jugando.dimensionBloques))) || (x <= (bombas.get(0).x - Jugando.dimensionBloques))
+					|| (y >= (bombas.get(0).y + Jugando.dimensionBloques)) || (y <= (bombas.get(0).y - Jugando.dimensionBloques)))
+				bombas.get(0).cuadranteDiferente = true;
+			
+			if(bombas.get(0).cuadranteDiferente)
+				if(this.intersects(bombas.get(0))) {
+					switch(direccion) {
+					case ARRIBA:
+						this.y += VEL;
+						bombas.get(0).cuadranteDiferente = false;
+						break;
+					case ABAJO:
+						this.y -= VEL;
+						bombas.get(0).cuadranteDiferente = false;
+						break;
+					case IZQUIERDA:
+						this.x += VEL;
+						bombas.get(0).cuadranteDiferente = false;
+						break;
+					case DERECHA:
+						this.x -= VEL;
+						bombas.get(0).cuadranteDiferente = false;
+					}
+				}
 		}
+			
 	}
 
 	public void direccionChocarBloques(int direccion) {
