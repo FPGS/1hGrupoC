@@ -32,6 +32,7 @@ public class Jugando extends Applet implements Runnable {
 		Bomba.bomba = new ArrayList<Bomba>();
 		Enemigos.enemigos = new ArrayList<Enemigos>();
 		Explosion.explosion = new ArrayList<Explosion>();
+		Explosion.contadorExplosion = new ArrayList<Integer>();
 		Mejoras.mejoras = new ArrayList<Mejoras>();
 		Mapa.BloquesMapa = new ArrayList<Mapa>();
 		Mapa.LadrillosMapa = new ArrayList<Mapa>();
@@ -58,7 +59,10 @@ public class Jugando extends Applet implements Runnable {
 			this.repaint();
 			try {
 				Thread.sleep(1);
-				Explosion.contadorExplosion++;
+				if(!Bomba.bomba.isEmpty())
+					for (int i = 0; i < Explosion.contadorExplosion.size(); i++) {
+						Explosion.contadorExplosion.set(i, Explosion.contadorExplosion.get(i)+1);
+					}
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 			}
@@ -75,10 +79,11 @@ public class Jugando extends Applet implements Runnable {
 		Jugador.jugador.dibujar(noseve);
 		
 //		Lo comentado aquí abajo es para imprimir el valor de variables y así hacer pruebas
-		/*if(!Bomba.bomba.isEmpty()) {
-			noseve.setColor(Color.black);
-			noseve.drawString(""+Bomba.bomba.get(0).cuadranteDiferente, 100, 100);
-		}*/
+//		if(!Bomba.bomba.isEmpty()) {
+//			noseve.setColor(Color.black);
+//			for (int i = 0; i < Bomba.bomba.size(); i++) 
+//				noseve.drawString(""+Bomba.bomba.get(i).cuadranteDiferente, 100 + (i*50), 100);
+//		}
 		
 		g.drawImage(imagen, 0, 0, this);
 	}
@@ -102,8 +107,11 @@ public class Jugando extends Applet implements Runnable {
 			Jugador.jugador.actualizar(direccion);
 		}
 		if (tecla == 32) {
-			Bomba.bomba.add(new Bomba(100, 75));
-			Bomba.colocarBomba();
+			if(Bomba.bomba.size() < 2) {
+				Bomba.bomba.add(new Bomba(100, 75));
+				Explosion.contadorExplosion.add(0);
+				Bomba.colocarBomba(Bomba.bomba.get(Bomba.bomba.size()-1));	//Así colocarBomba se ejecuta solo una vez por bomba creada, pasándole la bomba.
+			}
 		}
 		return true;
 	}

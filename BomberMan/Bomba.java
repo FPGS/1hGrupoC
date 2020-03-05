@@ -25,38 +25,37 @@ public class Bomba extends Rectangle {
 		}
 	}
 
-	public static void colocarBomba() {
-		
-		if (Jugador.jugador.x % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
-			if (Jugador.jugador.y % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
-				bomba.get(0).y = ((Jugador.jugador.y / Jugando.dimensionBloques)
-						- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
-						+ Jugando.dimensionBloques;
-				bomba.get(0).x = ((Jugador.jugador.x / Jugando.dimensionBloques)
-						- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
-						+ Jugando.dimensionBloques;
+	public static void colocarBomba(Bomba bombaActual) {
+			if (Jugador.jugador.x % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
+				if (Jugador.jugador.y % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
+					bombaActual.y = ((Jugador.jugador.y / Jugando.dimensionBloques)
+							- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
+							+ Jugando.dimensionBloques;
+					bombaActual.x = ((Jugador.jugador.x / Jugando.dimensionBloques)
+							- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
+							+ Jugando.dimensionBloques;
+				} else {
+					bombaActual.x = ((Jugador.jugador.x / Jugando.dimensionBloques)
+							- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
+							+ Jugando.dimensionBloques;
+					bombaActual.y = ((Jugador.jugador.y / Jugando.dimensionBloques)
+							- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
+				}
 			} else {
-				bomba.get(0).x = ((Jugador.jugador.x / Jugando.dimensionBloques)
-						- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
-						+ Jugando.dimensionBloques;
-				bomba.get(0).y = ((Jugador.jugador.y / Jugando.dimensionBloques)
-						- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
+				if (Jugador.jugador.y % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
+					bombaActual.x = ((Jugador.jugador.x / Jugando.dimensionBloques)
+							- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
+					bombaActual.y = ((Jugador.jugador.y / Jugando.dimensionBloques)
+							- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
+							+ Jugando.dimensionBloques;
+	
+				} else {
+					bombaActual.x = ((Jugador.jugador.x / Jugando.dimensionBloques)
+							- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
+					bombaActual.y = ((Jugador.jugador.y / Jugando.dimensionBloques)
+							- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
+				}
 			}
-		} else {
-			if (Jugador.jugador.y % Jugando.dimensionBloques > Jugando.dimensionBloques / 2) {
-				bomba.get(0).x = ((Jugador.jugador.x / Jugando.dimensionBloques)
-						- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
-				bomba.get(0).y = ((Jugador.jugador.y / Jugando.dimensionBloques)
-						- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques
-						+ Jugando.dimensionBloques;
-
-			} else {
-				bomba.get(0).x = ((Jugador.jugador.x / Jugando.dimensionBloques)
-						- ((Jugador.jugador.x % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
-				bomba.get(0).y = ((Jugador.jugador.y / Jugando.dimensionBloques)
-						- ((Jugador.jugador.y % Jugando.dimensionBloques)) / 100) * Jugando.dimensionBloques;
-			}
-		}
 	}
 
 	public void dibujar(Graphics g) {
